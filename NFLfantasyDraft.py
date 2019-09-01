@@ -91,7 +91,7 @@ SETS = {"N": NAMES, "P": POSITIONS, "W": WEEKS}
 PARAMS = {"d": PICKS, "v": VALUE, "b": BYE, "p": PLAYS, "s": STARTER, "c": CAPACITY}
 
 # open the path to where the data will be written
-INPUT = "nfl_fantasy_data_" + re.sub(" ", "", re.sub(":", "_", ctime())) + ".dat"
+INPUT = "nfl_fantasy_data_" + re.sub(" ", "_", re.sub(":", "_", ctime())) + ".dat"
 with open(INPUT, "w") as MYFILE:
 
     # write out the sets
@@ -242,8 +242,8 @@ TEAM["Previous_Pick"] = pd.DataFrame(data=INSTANCE.d.items()).iloc[:, 1]
 TEAM = pd.concat([TEAM, DATA[["Position", "Bye", "PTSespn", "Rank", "ADP", "Value"]]], axis=1)
 
 # export the solutions
-SCHEDULE.to_csv("nfl_fantasy_schedule_" + re.sub(" ", "", re.sub(":", "_", ctime())) + ".csv", index=False)
-TEAM.to_csv("nfl_fantasy_team_" + re.sub(" ", "", re.sub(":", "_", ctime())) + ".csv", index=False)
+SCHEDULE.to_csv("nfl_fantasy_schedule_" + re.sub(" ", "_", re.sub(":", "_", ctime())) + ".csv", index=False)
+TEAM.to_csv("nfl_fantasy_team_" + re.sub(" ", "_", re.sub(":", "_", ctime())) + ".csv", index=False)
 
 # clean out garbage in RAM
 del OPT, INSTANCE, RESULTS, TEAM, SCHEDULE, DATA
