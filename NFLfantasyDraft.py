@@ -90,7 +90,7 @@ SETS = {"N": NAMES, "P": POSITIONS, "W": WEEKS}
 # collect the data for the model parameters
 PARAMS = {"d": PICKS, "v": VALUE, "b": BYE, "p": PLAYS, "s": STARTER, "c": CAPACITY}
 
-# open the path to where the data will be written
+# open the path to where the results will be written
 INPUT = "nfl_fantasy_data_" + re.sub(" ", "_", re.sub(":", "_", ctime())) + ".dat"
 with open(INPUT, "w") as MYFILE:
 
